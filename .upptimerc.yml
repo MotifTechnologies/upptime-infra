@@ -13,7 +13,7 @@ sites:
     url: https://azure-monitor.motiftech.io/
   - name: icn bastion-01 ipv4 test
     url: icn-bast01.motiftech.io
-    port: 2022
+    port: 20022
     check: "tcp-ping"
     ipv4: true
 
