@@ -18,6 +18,11 @@ sites:
     port: 20022
     check: "tcp-ping"
     ipv4: true
+  - name: icn bastion-02 ipv4 test
+    url: icn-bast02.motiftech.io
+    port: 20022
+    check: "tcp-ping"
+    ipv4: true
 
 notification-channels:
   - slack
