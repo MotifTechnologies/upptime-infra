@@ -8,7 +8,7 @@ sites:
   - name: motiftechnologies
     url: https://motiftech.io/ko/
   - name: VPN
-    url: https://vpn.motiftech.io/
+    url: vpn.motiftech.io
     port: 443
     check: "tcp-ping"
   - name: Azure Grafana
