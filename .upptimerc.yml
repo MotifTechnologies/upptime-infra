@@ -7,17 +7,15 @@ sites:
     url: https://ib-topo-web.motiftech.io/
   - name: motiftechnologies
     url: https://motiftech.io/ko/
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
+  - name: VPN
+    url: https://vpn.motiftech.io/
+  - name: Azure Grafana
+    url: https://azure-monitor.motiftech.io/
+  - name: icn bastion-01 ipv4 test
+    url: icn-bast01.motiftech.io
+    port: 2022
     check: "tcp-ping"
-    ipv6: true
+    ipv4: true
 
 notification-channels:
   - slack
