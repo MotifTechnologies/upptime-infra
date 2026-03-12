@@ -9,6 +9,8 @@ sites:
     url: https://motiftech.io/ko/
   - name: VPN
     url: https://vpn.motiftech.io/
+    port: 443
+    check: "tcp-ping"
   - name: Azure Grafana
     url: https://azure-monitor.motiftech.io/
   - name: icn bastion-01 ipv4 test
