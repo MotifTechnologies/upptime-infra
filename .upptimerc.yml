@@ -13,12 +13,12 @@ sites:
     check: "tcp-ping"
   - name: Azure Grafana
     url: https://azure-monitor.motiftech.io/
-  - name: icn bastion-01 ipv4 test
+  - name: icn-bastion-001 ping
     url: icn-bast01.motiftech.io
     port: 20022
     check: "tcp-ping"
     ipv4: true
-  - name: icn bastion-02 ipv4 test
+  - name: icn-bastion-002 ping
     url: icn-bast02.motiftech.io
     port: 20022
     check: "tcp-ping"
