@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: master
       - name: Check for open issues and notify Slack
         env:
           SLACK_WEBHOOK: ${{ secrets.NOTIFICATION_SLACK_WEBHOOK_URL }}
