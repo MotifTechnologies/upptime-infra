@@ -1,3 +1,10 @@
+# 📖 Documentation
+
+- [How to add monitoring URLs & alert rules](./DOCS.md)
+
+
+---
+
 # [📈 Live Status](https://demo.upptime.js.org): <!--live status--> **🟩 All systems operational**
 
 This repository contains the open-source uptime monitor and status page for [Motif Technologies](https://demo.upptime.js.org), powered by [Upptime](https://github.com/upptime/upptime).
