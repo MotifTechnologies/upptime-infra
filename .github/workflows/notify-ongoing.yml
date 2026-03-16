@@ -1,0 +1,24 @@
+# .github/workflows/notify-ongoing.yml
+name: Notify ongoing incidents
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 10분마다
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for open issues and notify Slack
+        env:
+          SLACK_WEBHOOK: ${{ secrets.NOTIFICATION_SLACK_WEBHOOK_URL }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          ISSUES=$(gh issue list --repo ${{ github.repository }} --state open --json title,url --jq '.[] | "🟥 Ongoing: \(.title) \(.url)"')
+          if [ -n "$ISSUES" ]; then
+            curl -X POST $SLACK_WEBHOOK \
+              -H 'Content-type: application/json' \
+              -d "{\"text\": \"$ISSUES\"}"
+          fi
