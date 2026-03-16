@@ -3,7 +3,7 @@ name: Notify ongoing incidents
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # 10분마다
+    - cron: '*/5 * * * *' 
   workflow_dispatch:
 
 jobs:
