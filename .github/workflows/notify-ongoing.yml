@@ -17,9 +17,9 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.NOTIFICATION_SLACK_WEBHOOK_URL }}
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          ISSUES=$(gh issue list --repo ${{ github.repository }} --state open --json title,url --jq '.[] | "🟥 Ongoing: \(.title) \(.url)"')
+          ISSUES=$(gh issue list --repo ${{ github.repository }} --state open --json title,url,createdAt --jq '.[] | "🟥 Ongoing: \(.title)\nIssue: \(.url)\nSince: \(.createdAt)"')
           if [ -n "$ISSUES" ]; then
             curl -X POST $SLACK_WEBHOOK \
-              -H 'Content-type: application/json' \
-              -d "{\"text\": \"$ISSUES\"}"
+            -H 'Content-type: application/json' \
+            -d "{\"text\": \"$ISSUES\"}"
           fi
