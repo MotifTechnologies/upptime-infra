@@ -25,7 +25,8 @@ sites:
     ipv4: true
 
 notification-channels:
-  - slack
+  - type: slack
+  - repeat: 0.5
 
 assignees:
   - jay-mjkim
